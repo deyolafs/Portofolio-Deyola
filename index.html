@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Deyola Fadwa Shifana</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #EFF3EA;
+            color: #333;
+        }
+
+        .about-section, .portfolio-section {
+            padding: 60px 0;
+        }
+
+        .about-section {
+            background-color: #FFFDF0;
+        }
+
+        .portfolio-section {
+            background-color: #FFF2C2;
+        }
+
+        .card {
+            background-color: #D9DFC6;
+            border: none;
+            border-radius: 12px;
+        }
+
+        .card-title {
+            color: #333;
+        }
+
+        .btn-primary {
+            background-color: #EFF3EA;
+            border-color: #D9DFC6;
+            color: #333;
+        }
+
+        .btn-primary:hover {
+            background-color: #D9DFC6;
+            border-color: #EFF3EA;
+            color: #000;
+        }
+
+        .btn-info {
+            background-color: #FFFDF0;
+            border-color: #FFF2C2;
+            color: #333;
+        }
+
+        .btn-info:hover {
+            background-color: #EFF3EA;
+            border-color: #D9DFC6;
+            color: #000;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        h2 {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .welcome-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .welcome-text {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .welcome-section {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h4 {
+                font-size: 1rem;
+            }
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-cta {
+            background: linear-gradient(to right, #f6d365, #fda085);
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            border-radius: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .btn-cta {
+                background: linear-gradient(to right, #f6d365, #fda085);
+                color: #fff;
+                border: none;
+                padding: 10px 20px; /* Padding lebih kecil untuk layar kecil */
+                font-size: 0.6rem; /* Ukuran font lebih kecil */
+                text-transform: uppercase;
+                border-radius: 25px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .btn-cta:hover {
+                transform: scale(1.05); /* Hover effect lebih halus */
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Bayangan lebih ringan */
+            }
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .card-body p {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+        
+        nav {
+            background-color: #FFFDF0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-link {
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #f6d365;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px;
+            }
+
+            .navbar-nav {
+                text-align: center;
+            }
+        }
+
+        /* Section Skills */
+        .skills-section {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+        }
+
+        .skills-section .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills-section .card-body {
+            padding: 30px;
+        }
+
+        .skills-section h5.card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+
+        .skills-section ul li {
+            font-size: 0.8rem;
+            color: #555;
+            margin: 10px 0;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* Menambahkan efek hover pada list item */
+        .skills-section ul li:hover {
+            color: #ff8c00;
+            transition: color 0.3s ease;
+        }
+
+        .skills-section ul li:hover::before {
+            transform: scale(1.5); /* Membuat dot menjadi lebih besar saat hover */
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .skills-section .col-md-6 {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Modal styling */
+        .modal-dialog {
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        #projectTitle {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        #projectDescription {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Modal */
+        .modal-content {
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gambar dalam modal */
+        .project-image img {
+            width: 100%; /* Mengisi lebar kontainer */
+            height: 200px; /* Tentukan tinggi tetap untuk gambar yang lebih ramping */
+            object-fit: cover; /* Menjaga proporsi gambar dan mengisi kontainer */
+            transition: transform 0.3s ease-in-out; /* Efek transisi zoom */
+        }
+
+        .project-image img:hover {
+            transform: scale(1.05); /* Zoom-in efek saat hover */
+        }
+
+        /* Judul Proyek */
+        .project-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #007bff;
+        }
+
+        /* List Deskripsi Pekerjaan */
+        .modal-body ul {
+            padding-left: 20px;
+            font-size: 1rem;
+        }
+
+        .modal-body ul li {
+            margin-bottom: 10px;
+        }
+
+        .modal-body ul li strong {
+            color:rgb(247, 96, 37);
+        }
+
+        /* Tombol Lihat Website */
+        .btn-primary {
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+
+        /* Carousel di dalam card */
+        .card-body {
+            padding: 20px;
+        }
+
+        /* Carousel styling */
+        .carousel-inner {
+            position: relative;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 200px; /* Ukuran gambar */
+            object-fit: cover; /* Agar gambar mengisi ruang dengan baik */
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #007bff;
+            border-radius: 50%;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+    </style>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Deyola Fadwa Shifana</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#welcome">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang Saya</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skill</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pengalaman">Pengalaman</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Portofolio</a>
+                    </li>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cv">CV</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="welcome" class="welcome-section container">
+        <div>
+            <!-- Foto -->
+            <img src="assets/img/cipa.JPG" alt="Your Photo" class="profile-image mb-4">
+            <!-- Kalimat Penyambut -->
+            <h1 class="welcome-text">Selamat Datang di Portofolio Saya!</h1>
+            <h4 class="welcome-text">Halo, saya <strong>Deyola Fadwa Shifana</strong>. Temukan karya, pengalaman, dan perjalanan saya di sini. Nikmati eksplorasinya!</h4>
+            <!-- Tombol CTA -->
+            <a href="#projects" class="btn btn-cta mt-3">Lihat Proyek Saya</a>
+        </div>
+    </section>
+    
+    <!-- Section Tentang Saya -->
+    <section id="about" class="about-section text-center">
+        <div class="container">
+        <h2 class="mb-5 text-uppercase" style="color: #333; font-weight: bold;">Tentang Saya</h2>
+        <div class="row justify-content-center">
+            <!-- Foto Diri -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <img src="assets/img/wisuda.jpg" class="rounded-circle mb-3" alt="Deyola's Photo" style="width: 150px; height: 150px; object-fit: cover;">
+                        <h5 class="card-title fw-bold" style="font-size: 1.25rem;">Deyola Fadwa Shifana</h5>
+                        <p class="card-text text-muted" style="font-size: 0.9rem;">
+                            Fresh graduate penuh semangat dengan keahlian di bidang <strong>Sistem Informasi</strong>, <strong>Operasional</strong>, dan <strong>Manajemen Proyek</strong>.
+                        </p>
+                        <p class="card-text" style="font-size: 0.9rem;">
+                            Tertarik pada <strong>Digital Marketing</strong>, <strong>Entrepreneurship</strong>, <strong>Web Development</strong>, dan <strong>Business Analysis</strong>, menggabungkan kreativitas dan teknologi untuk menciptakan solusi inovatif.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Latar Belakang -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <img src="assets/img/unand.png" class="rounded-circle mb-3" alt="Deyola's Photo" style="width: 150px; height: 150px; object-fit: cover;">
+                        <h5 class="card-title fw-bold" style="font-size: 1.25rem;">Latar Belakang</h5>
+                        <p class="card-text" style="font-size: 0.9rem;">
+                            Lulusan <strong>Universitas Andalas</strong> dengan predikat <strong>cum laude</strong>, berpengalaman dalam bidang <strong>teknologi</strong>, <strong>bisnis</strong>, dan <strong>manajemen</strong>.
+                        </p>
+                        <p class="card-text" style="font-size: 0.9rem;">
+                            Percaya pada <strong>kolaborasi</strong> dan <strong>integritas</strong> untuk menciptakan dampak positif di setiap proyek.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="mt-3 text-center">
+            <a href="https://www.instagram.com/shifafadwa" target="_blank" class="btn btn-outline-primary btn-sm mx-1">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.linkedin.com/in/deyolafadwa/" target="_blank" class="btn btn-outline-info btn-sm mx-1">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://wa.me/62895386882088" target="_blank" class="btn btn-outline-success btn-sm mx-1">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+    </section>
+
+    <section id="skills" class="skills-section py-5">
+        <div class="container">
+            <h2 class="mb-5 text-uppercase text-center" style="color: #333; font-weight: bold;">Skills</h2>
+            <div class="row justify-content-center">
+                <!-- Hard Skills -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-light rounded">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4 d-flex align-items-center justify-content-center">
+                                <i class="fas fa-cogs me-2" style="color: #007bff;"></i>
+                                <span>Hard Skills</span>
+                            </h5>
+                            <ul class="list-unstyled">
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-code me-2" style="color: #007bff;"></i>
+                                    Pemrograman dan pengembangan aplikasi
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-database me-2" style="color: #007bff;"></i>
+                                    Manajemen database
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-project-diagram me-2" style="color: #007bff;"></i>
+                                    Analisis dan desain sistem
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-clock me-2" style="color: #007bff;"></i>
+                                    Pengelolaan waktu dan sumber daya
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-chart-line me-2" style="color: #007bff;"></i>
+                                    Penyusunan laporan dan analisis kebutuhan
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-database me-2" style="color: #007bff;"></i>
+                                    Pengelolaan database (MySQL, PostgreSQL, Microsoft SQL Server)
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-laptop-code me-2" style="color: #007bff;"></i>
+                                    Penggunaan alat pengembangan web (HTML, CSS, JavaScript, PHP, Laravel)
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fab fa-microsoft me-2" style="color: #007bff;"></i>
+                                    Microsoft Office (Word, Excel, PowerPoint)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-light rounded">
+                        <div class="card-body">
+                        <h5 class="card-title mb-4 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-users me-2" style="color: #28a745;"></i>
+                            <span>Soft Skills</span>
+                        </h5>
+                            <ul class="list-unstyled">
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-brain me-2" style="color: #28a745;"></i>
+                                    Kemampuan Analitis
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-clock me-2" style="color: #28a745;"></i>
+                                    Manajemen Waktu
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-comment-dots me-2" style="color: #28a745;"></i>
+                                    Komunikasi yang Efektif
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-tools me-2" style="color: #28a745;"></i>
+                                    Pemecahan Masalah
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-users me-2" style="color: #28a745;"></i>
+                                    Kepemimpinan dan Kolaborasi Tim
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-sync-alt me-2" style="color: #28a745;"></i>
+                                    Adaptabilitas
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-handshake me-2" style="color: #28a745;"></i>
+                                    Empati dan Keterampilan Interpersonal
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Pengalaman -->
+    <section id="pengalaman" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Pengalaman</h2>
+            <div class="row">
+                <!-- Pengalaman 1 -->
+                <div class="col-md-4 mb-4" style="font-size: 0.8rem;">
+                    <div class="card shadow-lg border-0 rounded">
+                        <img src="assets/img/upz3.jpg" class="card-img-top" alt="Pengalaman 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Developer</h5>
+                            <p class="card-text"><strong>Unit Pengumpulan Zakat PT Semen Padang</strong> | Februari 2024 - Desember 2024</p>
+                            <ul class="list-unstyled">
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-cogs me-2" style="color: #f39c12;"></i>
+                                    <span>Identifikasi dan usulkan perbaikan proses bisnis.</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-laptop-code me-2" style="color: #007bff;"></i>
+                                    <span>Desain dan kembangkan antarmuka pengguna web yang responsif.</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-code me-2" style="color: #28a745;"></i>
+                                    <span>Kembangkan frontend dan backend menggunakan PHP, Laravel, HTML, CSS, dan JavaScript.</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-tasks me-2" style="color: #9b59b6;"></i>
+                                    <span>Lakukan evaluasi mingguan dan laporkan kemajuan proyek.</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-plus-circle me-2" style="color: #28a745;"></i>
+                                    <span>Perbarui dan tambahkan fitur baru untuk memenuhi kebutuhan bisnis.</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-users me-2" style="color: #e67e22;"></i>
+                                    <span>Kolaborasi dengan tim untuk memastikan situs web selaras dengan tujuan.</span>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pengalaman 2 -->
+                <div class="col-md-4 mb-4" style="font-size: 0.8rem;">
+                    <div class="card shadow-lg border-0 rounded">
+                        <img src="assets/img/bagin.jpg" class="card-img-top" alt="Pengalaman 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Chief Operasional Officer</h5>
+                            <p class="card-text"><strong>Bag'in</strong> | Agustus 2021 - Desember 2022</p>
+                            <ul class="list-unstyled">
+                                <li class="d-flex align-items-center mb-3">
+                                    Bag'In termasuk dalam kategori Layanan dan Perdagangan, sebagai merek lokal yang mengkhususkan diri dalam berbagai totebag dengan desain minimalis dan estetis serata dapat dilukis.
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-cogs me-2" style="color: #28a745;"></i>
+                                    Memegang tanggung jawab untuk operasi harian organisasi.
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-clipboard-list me-2" style="color: #ffc107;"></i>
+                                    Memantau semua aspek operasional, termasuk pengelolaan kas, penjualan, dan pembelian.
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-video me-2" style="color: #e67e22;"></i>
+                                    Membantu dalam kegiatan promosi dengan merencanakan dan membuat video.
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pengalaman 3 -->
+                <div class="col-md-4 mb-4" style="font-size: 0.8rem;">
+                    <div class="card shadow-lg border-0 rounded">
+                        <img src="assets/img/kostpad.png" class="card-img-top" alt="Pengalaman 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Chief Executive Officer</h5>
+                            <p class="card-text"><strong>Kostpad</strong> | Okt 2022 - Sekarang</p>
+                            <ul class="list-unstyled">
+                                <li class="d-flex align-items-center mb-3">
+                                    Kostpad adalah untuk membantu mempermudah, mempercepat, dan membuat pencarian tempat tinggal di Kota Padang lebih transparan bagi mahasiswa dan karyawan yang membutuhkan akomodasi yang sesuai dengan kebutuhan dan anggaran mereka.
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-home me-2" style="color: #007bff;"></i>
+                                    Mendirikan layanan promosi rumah kos yang disebut KOSTPAD dengan cakupan Kota Padang.
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-users me-2" style="color: #28a745;"></i>
+                                    Melayani pelanggan yang ingin menggunakan layanan pencarian rumah kos di sekitar Padang.
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fab fa-instagram me-2" style="color: #e67e22;"></i>
+                                    Mempromosikan dan membuat konten tentang rumah kos di media Instagram.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pengalaman 4 -->
+                <div class="col-md-4 mb-4" style="font-size: 0.8rem;">
+                    <div class="card shadow-lg border-0 rounded">
+                        <img src="assets/img/hmsi.JPG" class="card-img-top" alt="Pengalaman 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Sekretaris Umum</h5>
+                            <p class="card-text"><strong>Himpunan Mahasiswa Sistem Informasi</strong> | Jan 2023 - Sep 2023</p>
+                            <ul class="list-unstyled">
+                            <ul class="list-unstyled">
+                                <li class="d-flex align-items-center mb-3">
+                                    <span>HMSI merupakan himpunan untuk menyatukan ide, aspirasi, dan kreativitas mahasiswa Sistem Informasi.</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-calendar-check me-2" style="color: #e67e22;"></i>
+                                    <span>Pengelolaan surat-menyurat dan jadwal organisasi.</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-archive me-2" style="color: #9b59b6;"></i>
+                                    <span>Mengelola semua arsip organisasi.</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-cogs me-2" style="color: #28a745;"></i>
+                                    <span>Memimpin semua sekretaris dari setiap divisi dalam organisasi.</span>
+                                </li>
+                            </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pengalaman 4 -->
+                <div class="col-md-4 mb-4" style="font-size: 0.8rem;">
+                    <div class="card shadow-lg border-0 rounded">
+                        <img src="assets/img/labgis.jpg" class="card-img-top" alt="Pengalaman 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Asisten Laboratorium</h5>
+                            <p class="card-text"><strong> Laboratory of Geographic Information System</strong> |  Okt 2021 - Sep 2024</p>
+                            <ul class="list-unstyled">
+                                <li class="d-flex align-items-center mb-3">
+                                    <span>LabGIS fokus pada Sistem Informasi Geografis (SIG), yang mengkhususkan diri dalam pemetaan dan visualisasi, manipulasi data, serta manajemen file.</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-cogs me-2" style="color: #007bff;"></i>
+                                    <span>Koordinasi kegiatan dan acara internal untuk asisten laboratorium, memastikan kelancaran operasional dan kolaborasi.</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-calendar-check me-2" style="color: #e67e22;"></i>
+                                    <span>Mengorganisir dan menjadwalkan kunjungan laboratorium, meningkatkan keterlibatan dengan pihak eksternal.</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-camera me-2" style="color: #9b59b6;"></i>
+                                    <span>Membuat dan mengkurasi konten untuk akun Instagram laboratorium untuk meningkatkan visibilitas dan jangkauan.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Portofolio -->
+    <section id="projects" class="portfolio-section text-center">
+        <div class="container">
+        <h2 class="mb-4 text-uppercase">Project</h2>
+        <div class="row justify-content-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <!-- Carousel di dalam card -->
+                        <div id="projectCarousel1" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/img/upz.png" class="d-block w-100" alt="Project 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/upz1.jpg" class="d-block w-100" alt="Project 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/upz2.jpg" class="d-block w-100" alt="Project 1">
+                                </div>
+                            </div>
+                            <!-- Kontrol carousel -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel1" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel1" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Sistem Informasi Pengelolaan Operasional UPZ BAZNAS PT SP</h5>
+                            <p class="card-text">
+                                Aplikasi untuk mengelola proses operasional baik itu oleh mustahiq, muzakki, serta pelaksana UPZ Baznas Semen Padang.
+                            </p>
+                            <a href="#" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal" onclick="showProjectDetails('Sistem Informasi Pengelolaan Operasional UPZ BAZNAS PT SP', 'Aplikasi untuk mengelola proses operasional...', ['https://via.placeholder.com/300x200', 'https://via.placeholder.com/300x200', 'https://via.placeholder.com/300x200'])">
+                                <i class="fas fa-link"></i> Detail
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <!-- Carousel di dalam card -->
+                        <div id="projectCarousel1" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/img/innostove2.png" class="d-block w-100" alt="Project 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/innostove1.png" class="d-block w-100" alt="Project 1">
+                                </div>
+                            </div>
+                            <!-- Kontrol carousel -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel1" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel1" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">PT INOVASI ENERGI PRIMA</h5>
+                            <p class="card-text">
+                                Website Profil Perusahaan.
+                            </p>
+                            <a href="#" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal2" onclick="showProjectDetails('PT INOVASI ENERGI PRIMA', 'Website Profil Perusahaan.', ['https://via.placeholder.com/300x200', 'https://via.placeholder.com/300x200', 'https://via.placeholder.com/300x200'])">
+                                <i class="fas fa-link"></i> Detail
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Curriculum Vitae</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <iframe src="assets/file/cv.pdf" width="100%" height="600px"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- /includes/footer.php -->
+<footer>
+    <div class="container text-center py-4">
+        <p>&copy; 2025 Deyola Fadwa Shifana. All Rights Reserved.</p>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+<!-- Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- Header Modal -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel">Detail Proyek</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Body Modal -->
+            <div class="modal-body">
+                <!-- Gambar Proyek -->
+                <div class="project-image mb-4">
+                    <img src="assets/img/upz3.jpg"  alt="Project Image">
+                </div>
+
+                <!-- Nama Proyek -->
+                <h5 class="project-title mt-3" style="color: #343a40; font-weight: bold;">Sistem Informasi Pengelolaan Operasional UPZ BAZNAS PT SP</h5>
+                
+                <!-- Deskripsi Singkat Proyek -->
+                <p class="mt-2 text-muted">Aplikasi untuk mengelola proses operasional baik itu oleh mustahiq, muzakki, serta pelaksana UPZ Baznas Semen Padang.</p>
+
+                <!-- Deskripsi Pekerjaan -->
+                <h6 class="mt-4">Berikut deskripsi pekerjaan yang pernah saya kerjakan:</h6>
+                <ul class="list-unstyled">
+                    <li><strong>Identifikasi Proses Bisnis yang Berjalan:</strong> Menganalisis dan memahami alur kerja serta prosedur perusahaan untuk mengidentifikasi area yang membutuhkan perbaikan.</li>
+                    <li><strong>Mengusulkan Proses Bisnis yang Lebih Efisien dan Efektif:</strong> Mengembangkan solusi dan rekomendasi untuk meningkatkan efisiensi dan efektivitas proses bisnis yang ada.</li>
+                    <li><strong>Mendesain Antarmuka Pengguna:</strong> Mendesain dan mengembangkan antarmuka pengguna yang intuitif dan responsif untuk aplikasi web, memastikan pengalaman pengguna yang optimal.</li>
+                    <li><strong>Mengembangkan Frontend dan Backend Situs Web:</strong> Menggunakan PHP dan framework Laravel, serta menggunakan teknologi frontend (HTML, CSS, JavaScript).</li>
+                    <li><strong>Evaluasi Mingguan:</strong> Melakukan evaluasi mingguan terhadap kemajuan proyek dan melaporkan perkembangan kepada tim pengawas untuk memastikan semua target tercapai sesuai jadwal.</li>
+                    <li><strong>Memperbarui dan Menambahkan Fitur Baru:</strong> Memperbarui dan menambahkan fitur baru pada situs web yang ada untuk memenuhi kebutuhan bisnis yang berkembang.</li>
+                    <li><strong>Memecahkan Masalah dan Memperbaiki Bug:</strong> Menyelesaikan bug dan memastikan situs web berjalan lancar.</li>
+                    <li><strong>Mengoptimalkan Kinerja Situs Web:</strong> Mengoptimalkan kinerja situs web dan pengalaman pengguna berdasarkan umpan balik dari pengguna dan pemangku kepentingan.</li>
+                    <li><strong>Keamanan dan Pembaruan:</strong> Secara teratur meninjau keamanan situs web dan melakukan pembaruan untuk menjaga integritasnya.</li>
+                </ul>
+
+                <!-- Link ke Website -->
+                <div class="text-center">
+                    <a id="projectLink" href="https://upzsp.org/" target="_blank" class="btn btn-cta mt-4" style="background-color: #007bff; border-color: #007bff;">
+                        Lihat Website
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2-->
+<div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- Header Modal -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel">Detail Proyek</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Body Modal -->
+            <div class="modal-body">
+                <!-- Gambar Proyek -->
+                <div class="project-image mb-4">
+                    <img src="assets/img/innostove2.png"  alt="Project Image">
+                </div>
+
+                <!-- Nama Proyek -->
+                <h5 class="project-title mt-3" style="color: #343a40; font-weight: bold;">Website Profil Perusahaan PT Inovasi Energi Prima</h5>
+
+                <!-- Deskripsi Pekerjaan -->
+                <h6 class="mt-4">Berikut deskripsi pekerjaan yang pernah saya kerjakan:</h6>
+                <ul class="list-unstyled">
+                    <li><strong>Fase Desain:</strong> Menggunakan Figma, saya merancang tata letak yang bersih dan profesional yang mencerminkan misi PT INOVASI ENERGI PRIMA dalam mendukung inovasi yang berkelanjutan.</li>
+                    <li><strong>Pengembangan:</strong> Saya mewujudkan desain tersebut dengan perhatian yang cermat terhadap detail, memastikan pengalaman yang mulus dan responsif di berbagai perangkat. Mengintegrasikan fungsionalitas dengan antarmuka yang ramah pengguna adalah kunci untuk menjadikan situs web ini fungsional sekaligus menarik.</li>
+                </ul>
+
+                <!-- Link ke Website -->
+                <div class="text-center">
+                    <a id="projectLink" href="https://www.innostove.com/" target="_blank" class="btn btn-cta mt-4" style="background-color: #007bff; border-color: #007bff;">
+                        Lihat Website
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
